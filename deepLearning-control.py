@@ -82,10 +82,6 @@ def test_lines(test_file):
 train_file  = input('Type train file name (should be excel file) ')
 test_file   = input('Type test file name (should be excel file) ')
 
-train_file  = 'C:/Users/bense/Downloads/training_set.csv'
-test_file   = 'C:/Users/bense/Downloads/mnist_test.csv'
-values_file = 'C:/Users/bense/OneDrive/Desktop/vanilla_learning/weights_biases.txt'
-
 while 1 == 1:
     user_decide = input("Decide what to do ('train', 'find accuracy', 'test lines'): ")
     
