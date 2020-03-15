@@ -23,15 +23,15 @@ class Neural_Network:
         self.numOut    = numOut
         #initializes random weights/biases between input layer and first hidden layer
         self.wList, self.bList = [np.random.randn(numNeu, numIn)], [np.zeros((numNeu, 1))]    
-        #initializes random weights/biases between hidden layers and output layer
+
         for i in range(numHid - 1):                                    
             self.wList.append(np.random.randn(numNeu, numNeu))   
             self.bList.append(np.zeros((numNeu, 1)))
-        #initializes weights/biases between last hidden layer and output layer
+
         self.wList.append(np.random.randn(numOut, numNeu))           
         self.bList.append(np.zeros((numOut, 1)))
-        #initialize learning rate
-        self.learnRate = 1.25
+
+        self.learnRate = 1.1
         self.costFunc  = 0
         
     def activation(self, z, deriv=False):         
@@ -48,7 +48,7 @@ class Neural_Network:
             self.aList.append(self.activation(dot( self.wList[a], self.aList[a - 1] ) + self.bList[a]))    
         #output layer set to last layer in aList          
         self.outList = self.aList[a]    
-        #keeps track of cost function 
+
         if(findCorrect == True):
             for i in range(self.numOut): self.costFunc += (((self.outList[i] - outCorrect[i]) ** 2) / self.numOut)   
               
@@ -62,7 +62,7 @@ class Neural_Network:
             #finds total adjustments that should be made for previous activation, does not perform this task for input layer
             for i in range(len(self.aList[a])): 
                 tempDA0 = add(tempDA0, (tempDA1[i] * dz[i]) * self.wList[a][i])      
-        #adjustments made to weights/biases based on gradient descent                                                                                           
+
         self.wList[a] -= multiply([(i * tempA0) for i in (tempDA1.flatten() * dz.flatten())], self.learnRate)     
         self.bList[a] -= multiply([[i] for i in (tempDA1.flatten() * dz.flatten())]         , self.learnRate)
         
@@ -78,5 +78,5 @@ class Neural_Network:
         self.back_prop_layer(0, inList, daList[self.numLayers - 1 - 0], adjustPre=False)   
         
         learnCount = (count % 5000) / 5000
-        self.learnRate = 1.25 - learnCount
+        self.learnRate = 1.1 - learnCount
         
