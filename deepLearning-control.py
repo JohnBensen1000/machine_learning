@@ -15,8 +15,7 @@ Neural_Net = Neural_Network(num_in, num_hid, num_neu, num_out)
  
 #####################################################################
     
-def train_network(train_file, values_file):
-    write_to = open(values_file, 'w') 
+def train_network(train_file):
     raw_data = open(train_file, 'r')
     raw_data = raw_data.readlines()
 
@@ -85,7 +84,7 @@ test_file   = input('Type test file name (should be excel file) ')
 while 1 == 1:
     user_decide = input("Decide what to do ('train', 'find accuracy', 'test lines'): ")
     
-    if(user_decide == 'train'): train_network(train_file, values_file)
+    if(user_decide == 'train'): train_network(train_file)
         
     elif(user_decide == 'find accuracy'): find_accuracy(test_file)
     
