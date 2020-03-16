@@ -1,8 +1,8 @@
 from   CNN_Object2 import CNN
 import numpy as np
 
-train_file  = 'C:/Users/bense/Downloads/training_set.csv'
-test_file   = 'C:/Users/bense/Downloads/mnist_test.csv'
+train_file  = input("Traning file (.csv): ")
+test_file   = input("Testing file (.csv): ")
 
 epoch = int(input("Epoch of training set: "))
 mainCNN = CNN(2, 16)
@@ -24,7 +24,7 @@ for i in range(1, epoch):
         in_square.append(in_list[a*28: a*28 + 28])
 
     mainCNN.feedFor(in_square, outCorrect)      
-    mainCNN.backProp(outCorrect, in_square)
+    mainCNN.backProp(outCorrect, in_square, i)
     
     if i % 1000 == 0:    
         print(str(round(mainCNN.costFunc[0] / (i), 5)) + '     ' + str(i))
