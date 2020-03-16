@@ -111,10 +111,3 @@ class CNN:
         
         learnCount = count % 100
         self.learnRate = (2 - count/60000) - learnCount / 100
-        
-        
-        #da0 = np.zeros(len(self.aList[num]))
-        #        print(len(self.aList[num]), len(self.fullWei[num]))
-
-        #        for a in range(len(self.aList[num+1])):
-        #            da0 = da0 + da[a] * dz[a] * self.fullWei[num][a]
