@@ -34,8 +34,9 @@ this repository:
   The original paper could be found at https://arxiv.org/abs/1511.02583.
   
 # Tensorflow
-  I wrote this code along with a tutorial on how to user Tensorflow, found at https://www.youtube.com/watch?   v=tPYj3fFJGjk&list=PLYLyA78Q4izuAlaaOER3qwUZkqLTZf7qk&ab_channel=freeCodeCamp.org. The tutorial focused on deep
-  neural networks, convolutional neural networks, data pre-processing, and transfer learning.
+  I wrote this code along with a tutorial on how to user Tensorflow, found at 
+  https://www.youtube.com/watch?v=tPYj3fFJGjk&list=PLYLyA78Q4izuAlaaOER3qwUZkqLTZf7qk&ab_channel=freeCodeCamp.org. 
+  The tutorial focused on deep neural networks, convolutional neural networks, data pre-processing, and transfer learning.
   
   
 
